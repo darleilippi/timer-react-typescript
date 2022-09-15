@@ -23,50 +23,12 @@ const Button = styled.button`
 
     font-size: 9pt;
 
-    background-color: transparent;
-    border: 1px solid var(--details);
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
 
-    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.5);
-
-    transition: all ease 0.3s;
-
-    &.active {
-        cursor: not-allowed;
-    }
-
-    &:not(.active):active {
-        transform: translateY(2px);
-
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-    }
-
-    &:first-child {
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
-
-        &:not(.active) {
-            border-right: none;
-        }
-    }
-
-    &:last-child {
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-
-        &:not(.active) {
-            border-left: none;
-        }
-    }
+    transition: color 0.1s, background-color 0.3s, transform 0.2s, display 0.5s;
 `;
 
-const ButtonLight = styled(Button)`
-    background-color: #ffffff;
-    color: #000000;
-`;
-
-const ButtonDark = styled(Button)`
-    background-color: #000000;
-    color: #ffffff;
-`;
-
-export { Container, ButtonLight, ButtonDark };
+export { Container, Button };

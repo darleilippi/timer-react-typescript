@@ -4,7 +4,7 @@ import { ThemeContext } from "./contexts/ThemeContext";
 import ThemeToggler from "./components/ThemeToggler";
 import Timer from './components/Timer';
 
-export default function App() {
+const App: React.FC = () => {
 	const { theme } = useContext(ThemeContext);
 
 	return (
@@ -14,3 +14,5 @@ export default function App() {
 		</div>
 	);
 }
+
+export default App;

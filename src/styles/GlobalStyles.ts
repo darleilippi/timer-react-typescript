@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 
         height: 100%;
         width: 100%;
@@ -25,29 +26,29 @@ const GlobalStyles = createGlobalStyle`
         color: var(--text-color);
         background-color: var(--bg-color);
 
-        transition: all 0.5s;
+        transition: color 0.3s, background-color 0.3s;
     }
 
     .app.light {
-        --bg-color: #ffffff;
-        --text-color: #4a4a4a;
+        --bg-color: #e9e9e9;
+        --text-color: #484848;
 
-        --border-color: #4a4a4a;
+        --details-color: #22a84a;
+        --bg-content: #dfdfdf;
 
-        --details: #22a84a;
-        --content: #2c2c2c;
-        --content-text: #ffffff;
+        --box-shadow-color: rgba(0, 0, 0, 0.4);
+        --box-shadow: 0px 5px 10px 0px var(--box-shadow-color);
     }
 
     .app.dark {
         --bg-color: #4a4a4a;
-        --text-color: #ffffff;
+        --text-color: #e9e9e9;
 
-        --border-color: #ffffff;
+        --details-color: #22a84a;
+        --bg-content: #383838;
 
-        --details: #22a84a;
-        --content: #ffffff;
-        --content-text: #4a4a4a;
+        --box-shadow-color: rgba(0, 0, 0, 0.8);
+        --box-shadow: 0px 5px 10px 0px var(--box-shadow-color);
     }
 `;
 

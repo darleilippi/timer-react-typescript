@@ -5,24 +5,23 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import * as S from './style';
 
 const ThemeToggler = () => {
-    const { theme, setTheme } = useContext(ThemeContext);
+    const { theme, switchTheme } = useContext(ThemeContext);
+
+    const themeInverted = theme === 'light' ? 'dark' : 'light';
 
     return (
         <S.Container>
-            <S.ButtonLight 
+            <S.Button 
                 className={(theme === 'light' ? 'active' : '')} 
-                onClick={() => setTheme('light')}
-                title="Alterar para tema claro"
+                onClick={() => switchTheme(themeInverted)}
+                title={`Alterar para tema ${themeInverted}`}
             >
-                <Sun size={14} weight="fill" />
-            </S.ButtonLight>
-            <S.ButtonDark 
-                className={(theme === 'dark' ? 'active' : '')} 
-                onClick={() => setTheme('dark')}
-                title="Alterar para tema escuro"
-            >
-                <Moon size={14} weight="fill" />
-            </S.ButtonDark>
+                {
+                    (theme === 'light') 
+                        ? <Moon size={14} weight="fill" />
+                        : <Sun size={14} weight="fill" />
+                }
+            </S.Button>
         </S.Container>
     );
 }

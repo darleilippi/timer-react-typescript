@@ -1,51 +1,56 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+    background: var(--box-shadow-color);
+    box-shadow: var(--box-shadow);
 
+    border-radius: 10px;
+
+    margin-bottom: 40px;
 `;
 
 const Title = styled.h1`
-    color: var(--content-text);
-    background-color: var(--content);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-
-    transition: all 0.3s;
-
     min-width: 320px;
     width: 320px;
 
+    z-index: 10;
+
+    color: var(--text-color);
+    background-color: var(--bg-content);
+    
     text-align: center;
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: 300;
-
-    padding: 10px;
-
+    
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-
+    
+    padding: 10px;
     margin-bottom: 3px;
+
+    transition: color 0.3s, background-color 0.3s;
 `;
 
 const TimeBox = styled.div`
-    color: var(--content-text);
-    background-color: var(--content);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-
-    transition: all 0.3s;
-
-    min-width: 320px;
-    width: 320px;
-
     display: grid;
     grid-template-columns: 1fr 10px 1fr 10px 1fr;
 
+    z-index: 10;
+
+    width: 320px;
+    min-width: 320px;
+
+    color: var(--text-color);
+    background-color: var(--bg-content);
+
     font-size: 40pt;
-    font-weight: 200;
-
+    
     padding: 10px 20px;
-
+    
     margin-bottom: 3px;
+
+    transition: color 0.3s, background-color 0.3s;
 `;
 
 const Time = styled.span`
@@ -69,8 +74,6 @@ const ActionsBox = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    margin-bottom: 40px;
 `;
 
 const Button = styled.button`
@@ -78,8 +81,11 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
 
+    z-index: 10;
+
     width: 100%;
     min-height: 56px;
+
     cursor: pointer;
 
     padding: 15px;
@@ -87,12 +93,10 @@ const Button = styled.button`
     border: none;
     font-size: 20pt;
 
-    background-color: var(--content);
-    color: var(--details);
+    background-color: var(--bg-content);
+    color: var(--text-color);
 
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
-
-    transition: all ease 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 
     &:disabled {
         cursor: not-allowed;
@@ -100,24 +104,35 @@ const Button = styled.button`
     }
 
     &:active:not(:disabled) {
-        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
-        transform: translateY(4px);
+        transform: translate3d(4px, 4px, 10px);
     }
 
-    &:hover {
-        background-color: var(--content);
-    }
-
-    &:nth-child(2) {
-        margin: 0 3px;
+    &:hover:not(:disabled) {
+        color: var(--details-color);
     }
 
     &:first-child {
         border-bottom-left-radius: 10px;
+
+        &:active:not(:disabled) {
+            transform: translate3d(1px, 2px, 10px);
+        }
+    }
+
+    &:nth-child(2) {
+        margin: 0 3px;
+
+        &:active:not(:disabled) {
+            transform: translate3d(0px, 2px, 10px);
+        }
     }
 
     &:last-child {
         border-bottom-right-radius: 10px;
+
+        &:active:not(:disabled) {
+            transform: translate3d(-1px, 2px, 10px);
+        }
     }
 `;
 
@@ -128,6 +143,8 @@ const Midea = styled.div`
 `;
 
 const MideaLink = styled.a`
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,12 +155,17 @@ const MideaLink = styled.a`
 
     padding: 5px;
 
-    color: var(--details);
-    border: 1px solid transparent;
+    color: var(--text-color);
 
-    border-radius: 5px;
+    transition: color 0.3s;
 
-    transition: all 0.3s;
+    &:first-child {
+        margin-right: 20px;
+    }
+
+    &:hover {
+        color: var(--details-color);
+    }
 `;
 
 export { Container, Title, TimeBox, Time, Separator, ActionsBox, Button, Midea, MideaLink };
