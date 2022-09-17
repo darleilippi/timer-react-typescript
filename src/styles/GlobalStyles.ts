@@ -1,4 +1,4 @@
-import { createGlobalStyle, withTheme } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -30,11 +30,11 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .app.light {
-        --bg-color: #e9e9e9;
+        --bg-color: #dfdfdf;
         --text-color: #484848;
 
         --details-color: #22a84a;
-        --bg-content: #dfdfdf;
+        --bg-content: #efefef;
 
         --box-shadow-color: rgba(0, 0, 0, 0.4);
         --box-shadow: 0px 5px 10px 0px var(--box-shadow-color);
@@ -52,4 +52,4 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
-export default withTheme(GlobalStyles);
+export default GlobalStyles;

@@ -32,43 +32,7 @@ const Title = styled.h1`
     transition: color 0.3s, background-color 0.3s;
 `;
 
-const TimeBox = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 10px 1fr 10px 1fr;
 
-    z-index: 10;
-
-    width: 320px;
-    min-width: 320px;
-
-    color: var(--text-color);
-    background-color: var(--bg-content);
-
-    font-size: 40pt;
-    
-    padding: 10px 20px;
-    
-    margin-bottom: 3px;
-
-    transition: color 0.3s, background-color 0.3s;
-`;
-
-const Time = styled.span`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    height: 70px;
-    line-height: 70px;
-
-    letter-spacing: 5px;
-`;
-
-const Separator = styled.span`
-
-`;
 
 const ActionsBox = styled.div`
     display: flex;
@@ -168,4 +132,4 @@ const MideaLink = styled.a`
     }
 `;
 
-export { Container, Title, TimeBox, Time, Separator, ActionsBox, Button, Midea, MideaLink };
+export { Container, Title, ActionsBox, Button, Midea, MideaLink };
