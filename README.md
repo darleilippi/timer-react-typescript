@@ -11,6 +11,7 @@ Um projeto simples, onde é visualizado um cronômetro com a possibilidade de "I
 Estas foram as tecnologias utilizadas neste projeto:
 
 - ReactJs
+- Styled Components
 - Typescript
 - CSS
 - [Phosphor Icons](https://phosphoricons.com/)
