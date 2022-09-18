@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react';
 
-const useTimer = (initialValue = 0) => {
-    const [timer, setTimer] = useState(initialValue);
+const useTimer = () => {
+    const [timer, setTimer] = useState(0);
 
     const [isActive, setIsActive] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
 
-    const timerRef = useRef(null);
+    const timerRef = useRef<NodeJS.Timer | number>(0);
 
     const handleStart = () => {
         setIsActive(true);
